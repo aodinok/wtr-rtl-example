@@ -2,7 +2,8 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { expect } from 'chai';
 
-import App from './App';
+// import App from './App';
+import App from './AppWithBoundary';
 
 describe('<App>', () => {
   it('throws error', () => {
@@ -17,6 +18,6 @@ describe('<App>', () => {
     //   console.log('error catch successful')
     // }
 
-    expect(() => render(<App />)).to.throw('error!');
+    expect(() => render(<App />)).to.throw();
   });
 });

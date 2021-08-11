@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { expect } from 'chai';
 
 // import App from './App';
 import App from './AppWithBoundary';
 
 describe('<App>', () => {
+  it('renders without error', () => {
+    render(<App initialSimulateError={false} />)
+    expect(screen.getByRole('button')).not.to.eql('null');
+  });
+
   it('throws error', () => {
 
     // Neither of this works
@@ -18,6 +23,6 @@ describe('<App>', () => {
     //   console.log('error catch successful')
     // }
 
-    expect(() => render(<App />)).to.throw();
+    expect(() => render(<App initialSimulateError={false} />)).to.throw();
   });
 });

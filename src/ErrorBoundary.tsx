@@ -27,15 +27,15 @@ class ErrorBoundary extends React.Component<Props, State> {
   };
 
   componentDidCatch(error, errorInfo) {
+    console.log('catched', error)
     this.setState({
       error,
     });
   }
 
   render() {
-    const { hasDarkBackground } = this.props;
-
     if (this.props.hasError || this.state.error) {
+      console.log('rendering error')
       return JSON.stringify(this.state.error)
     }
 

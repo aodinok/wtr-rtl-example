@@ -23,6 +23,6 @@ describe('<App>', () => {
     //   console.log('error catch successful')
     // }
 
-    expect(() => render(<App initialSimulateError={false} />)).to.throw();
+    expect(() => render(<App initialSimulateError={true} />)).to.throw();
   });
 });
